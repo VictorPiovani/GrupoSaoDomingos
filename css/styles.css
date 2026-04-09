@@ -11063,10 +11063,41 @@ body {
   border: 0;
 }
 
+/* Typography Refinement */
+body {
+  letter-spacing: 0.01em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem; /* Base font size increased */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .text-uppercase {
+  letter-spacing: 0.05em;
+  font-weight: 800;
+}
+
+/* Premium Navbar with Glassmorphism */
+#mainNav {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: transparent !important;
+}
+
+#mainNav.navbar-shrink {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced Hero Content */
 .masthead {
   position: relative;
   height: 100vh;
-  min-height: 700px;
+  min-height: 800px;
   background: url("../assets/img/hero.png") no-repeat center center;
   background-size: cover;
   display: flex;
@@ -11074,79 +11105,60 @@ body {
   overflow: hidden;
 }
 
-/* overlay escuro (lado esquerdo mais forte) */
+/* Stronger overlay for maximum readability */
 .masthead::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.9) 20%,
-    rgba(0, 0, 0, 0.6) 50%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.95) 10%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.4) 100%
   );
   z-index: 1;
 }
 
-/* garantir que o conteúdo fique acima */
 .hero-content {
   position: relative;
   z-index: 2;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.5); /* Subtle text shadow for depth */
 }
 
-/* headline */
 .masthead h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem; /* Larger h1 */
   line-height: 1.1;
-  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
 }
 
-/* destaque vermelho */
-.text-primary {
-  color: #e52d27 !important;
+.masthead .lead {
+  font-size: 1.4rem; /* Larger subheadline */
+  font-weight: 300;
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* botão */
-.btn-primary {
-  background-color: #e52d27;
-  border: none;
-  padding: 14px 28px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+/* Section Transitions */
+section {
+  padding: 160px 0; /* More whitespace between sections */
 }
 
-.btn-primary:hover {
-  background-color: #c81f1a;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(229, 45, 39, 0.3);
-}
-
-/* pilares */
-.pillar-item {
-  border-left: 3px solid #e52d27;
-  padding-left: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* About Section Reusing Hero Image */
+/* About Section Refinement */
 .about-section {
   position: relative;
   background: url("../assets/img/hero.png") no-repeat center center fixed;
   background-size: cover;
-  padding: 100px 0;
+  padding: 180px 0;
 }
 
 .about-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.85); /* Darker overlay for about text */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
 }
 
 .about-content {
@@ -11154,84 +11166,109 @@ body {
   z-index: 2;
 }
 
-.icon-box {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(229, 45, 39, 0.1);
-  border-radius: 12px;
-  font-size: 1.5rem;
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-/* Service Cards */
+/* Service Cards Refinement */
 .service-card {
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 24px !important;
+  padding: 3rem !important;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.03) !important;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+.service-card h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 
 .placeholder-icon {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.9;
+  height: 100px;
+  margin-bottom: 2rem;
 }
 
-/* WhatsApp Float */
+/* THE MAGIC WHATSAPP BUTTON - Agency Premium */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  color: #fff;
+  width: 70px; /* Aumentado para acomodar o ícone maior */
+  height: 70px;
+  background-color: #e52d27;
+  color: #fff !important;
   border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  z-index: 9999;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 40px rgba(229, 45, 39, 0.4);
+  text-decoration: none !important;
+  overflow: hidden;
+  white-space: nowrap;
+  /* (70px largura - 50px ícone) / 2 = 10px de padding */
+  padding-left: 10px;
+}
+
+.whatsapp-float i, 
+.whatsapp-float svg {
+  font-size: 50px !important; /* REALMENTE GRANDE */
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center;
   justify-content: center;
-  z-index: 1000;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+}
+
+.whatsapp-float span {
+  font-weight: 800;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+  margin-left: 0;
+  color: #fff;
 }
 
 .whatsapp-float:hover {
-  background-color: #128c7e;
-  color: #fff;
-  transform: scale(1.1);
+  width: 320px;
+  padding-left: 20px;
+  background-color: #c81f1a;
+}
+
+.whatsapp-float:hover i,
+.whatsapp-float:hover svg {
+  transform: rotate(360deg) scale(0.85);
+}
+
+.whatsapp-float:hover span {
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 15px;
 }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
-  .masthead {
-    height: auto;
-    padding: 120px 0 80px;
-  }
-  
+@media (max-width: 991.98px) {
   .masthead h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   
-  .hero-pillars {
-    flex-direction: column;
-    gap: 15px !important;
-    margin-top: 30px !important;
+  .masthead .lead {
+    font-size: 1.2rem;
   }
   
-  .about-section {
-    padding: 60px 0;
-  }
-  
-  .about-content {
-    padding: 30px !important;
+  section {
+    padding: 100px 0;
   }
 }
 
